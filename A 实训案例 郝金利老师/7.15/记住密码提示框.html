@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>记住密码提示框</title>
+  <!-- 样式 -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+
+    }
+
+    .box {
+      width: 100%;
+      margin: 10px auto;
+      text-align: center;
+    }
+
+    .accordingTo {
+      background-color: #ffefa4;
+      border: 1px solid #ff9900;
+      width: 250px;
+      margin: 10px auto;
+      height: 40px;
+      /* 给这个默认为隐藏 */
+      display: none;
+
+    }
+  </style>
+  <!-- 逻辑代码 -->
+  <script>
+    window.onload = function () {
+      /* 通过属性名或者id名获取各个属性的内容 
+      然后通过鼠标划过 'label中包含元素' 来触发相应的事件  onmousemove 和鼠标移开事件 onmouseout 来进行 oaccordingTo的
+      显示和隐藏
+      */
+      // 通过id名来获取到元素内容
+      var oaccordingTo = document.getElementById('accordingTo')
+      console.log(oaccordingTo);
+      // 获取到label下标为0的元素
+      var ocheck = document.getElementsByTagName('label')[0]
+      console.log(ocheck);
+      // onmousemove 鼠标进过事件
+      // 通过css的display 'none' / 'block' 属性来进行显示隐藏
+      ocheck.onmousemove = function () {
+        oaccordingTo.style.display = 'block'
+      }
+      // onmousemove 鼠标离开事件
+      ocheck.onmouseout = function () {
+        oaccordingTo.style.display = 'none'
+      }
+
+    }
+  </script>
+</head>
+
+<body>
+  <div class="box">
+    <label> <input type="checkbox"> 两周内自动登录</label>
+    <div class="accordingTo" id="accordingTo">为了您的信息安全，请不要在网吧或公用电脑上使用此功能！</div>
+  </div>
+</body>
+
+</html>

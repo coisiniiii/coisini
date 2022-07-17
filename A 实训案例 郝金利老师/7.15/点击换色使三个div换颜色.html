@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .box div {
+      width: 300px;
+      height: 300px;
+      background-color: #323232;
+      float: left;
+      margin: 10px;
+    }
+  </style>
+  <script type="text/javascript">
+    window.onload = function () {
+      var boxxx = document.getElementsByTagName('div')
+      console.log(boxxx.index);
+      var colorr = document.getElementById('color')
+      console.log(colorr);
+      colorr.onclick = function () {
+        // for (var i = 1; i < boxxx.length; i++) {
+        //   console.log(112);
+        //   boxxx[i].style.background = "pink"
+        // }
+        for (var i = 1; i < boxxx.length; i++) {
+          boxxx[i].style.background = "pink";
+        }
+
+      }
+
+    }
+
+  </script>
+
+</head>
+
+<body>
+  <div class="box">
+    <button id="color">点击换色</button>
+    <div></div>
+    <div></div>
+    <div></div>
+
+  </div>
+</body>
+
+</html>
